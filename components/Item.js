@@ -12,11 +12,11 @@ export default class Item extends Component {
         return (
             <View>
                 <Text> Item Screen with Drawer </Text>
-                <Button
-                    title='Open Drawer'
-                    onPress={() => {
-                        this.props.navigation.openDrawer();
-                    }} />
+                    <Button
+                        title='Open Drawer'
+                        onPress={() => {
+                            this.props.navigation.openDrawer();
+                        }} />
             </View>
         );
     }

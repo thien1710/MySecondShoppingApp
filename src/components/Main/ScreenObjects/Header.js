@@ -10,7 +10,7 @@ export default class Header extends Component {
         return (
             <View style={styles.header}>
                 <View style={styles.headerTop}>
-                    <TouchableOpacity onPress={() => this.props.navigation.toggleDrawer()}>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('StackHome')}>
                         <Image source={require('../../../media/appIcon/ic_menu.png')}
                             style={styles.iconStyle} />
                     </TouchableOpacity>

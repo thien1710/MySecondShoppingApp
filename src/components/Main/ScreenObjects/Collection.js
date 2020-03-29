@@ -17,9 +17,6 @@ export default class Collection extends Component {
                 <View style={{ flex: 4, justifyContent: 'flex-end' }}>
                     <Image source={require('../../../media/temp/banner.jpg')} style={styles.imageStyle} />
                 </View>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('Search')}>
-                    <Text>Click Click</Text>
-                </TouchableOpacity>
             </View>
         );
     }
