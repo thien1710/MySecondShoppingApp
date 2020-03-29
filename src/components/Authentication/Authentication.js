@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default class Authentication extends Component {
-    goBackToMain() {
-        const { navigator } = this.props;
-        navigator.pop();
-    }
-    render() {
-        return (
-            <View style={{ flex: 1, backgroundColor: '#DFF5C9' }}>
-                <Text>Authentication Component</Text>
-                <TouchableOpacity onPress={this.goBackToMain.bind(this)}>
-                    <Text>Go back to Main</Text>
-                </TouchableOpacity>
-            </View>
-        );
-    }
+  render() {
+    return (
+      <View >
+        <Text>This is Authentication</Text>
+        
+      </View>
+    );
+  }
 }
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default class ChangeInfo extends Component {
+export default class OrderHistory extends Component {
   render() {
     return (
       <View >
-        <Text>This is ChangeInfo</Text>
+        <Text>This is OrderHistory</Text>
       </View>
     );
   }
