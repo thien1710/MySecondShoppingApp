@@ -32,19 +32,19 @@ const ListItemStack = createStackNavigator({
 const IndexNavigator = createBottomTabNavigator({
   'Main': Home,
   'List': ListItemStack
-}, {
-  defaultNavigationOptions: ({ navigation }) => ({
-    tabBarIcon: ({ focused, horizontal, tintColor }) => {
-      const { routeName } = navigation.state;
-      let iconName;
-      if (routeName === "Main") {
-        iconName = `ios-home`;
-      } else if (routeName === "List") {
-        iconName = `ios-analytics`;
-      }
-      return <Ionicons name={iconName} size={25} color={tintColor} />;
-    }
-  })
+// }, {
+//   defaultNavigationOptions: ({ navigation }) => ({
+//     tabBarIcon: ({ focused, horizontal, tintColor }) => {
+//       const { routeName } = navigation.state;
+//       let iconName;
+//       if (routeName === "Main") {
+//         iconName = `ios-home`;
+//       } else if (routeName === "List") {
+//         iconName = `ios-analytics`;
+//       }
+//       return <Ionicons name={iconName} size={25} color={tintColor} />;
+//     }
+//   })
 });
 
 const AppInMain = createAppContainer(IndexNavigator);
