@@ -13,23 +13,6 @@ import CustomDrawer from '../components/CustomDrawer/CustomDrawer'
 
 // import SafeAreaView from 'react-native-safe-area-view';
 
-// const CustomDrawerContentComponent = props => (
-//   <ScrollView style={{backgroundColor: 'yellow'}}>
-//     <View style={styles.container}>
-//       <Image source={require('../../src/media/temp/profile.png')}
-//       style={{width:100, height: 100}}/>
-//       <DrawerItems {...props} />
-//     </View>
-//   </ScrollView>
-// );
-
-// const styles = StyleSheet.create({
-//   container: {
-//     backgroundColor: 'blue',
-//     flex: 1,
-//   },
-// });
-
 const TestDrawerItem = (props) => (
   <View>
     <Text>
