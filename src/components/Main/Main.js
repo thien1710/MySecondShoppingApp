@@ -15,29 +15,29 @@ export default class Main extends Component {
     }
     render() {
         return (
-            <Button
-          title='Open Drawer'
-          onPress={() => {
-            this.props.navigation.openDrawer();
-          }} />
+        //     <Button
+        //   title='Open Drawer'
+        //   onPress={() => {
+        //     this.props.navigation.openDrawer();
+        //   }} />
 
-            // <ScrollView style={styles.container}>
+            <ScrollView style={styles.container}>
 
-            //     {/* HEADER */}
+                {/* HEADER */}
 
-            //     <Header navigation={this.props.navigation} />
+                <Header navigation={this.props.navigation} />
 
-            //     {/* MAIN */}
+                {/* MAIN */}
 
-            //     {/* SPRING COLLECTION */}
-            //     <Collection navigation={this.props.navigation} />
+                {/* SPRING COLLECTION */}
+                {/* <Collection navigation={this.props.navigation} /> */}
 
-            //     {/* LIST OF CATEGORY */}
-            //     <Category />
+                {/* LIST OF CATEGORY */}
+                {/* <Category /> */}
 
-            //     {/* TOP PRODUCT */}
-            //     {/* <TopProduct /> */}
-            // </ScrollView>
+                {/* TOP PRODUCT */}
+                {/* <TopProduct /> */}
+            </ScrollView>
         );
     }
 }
