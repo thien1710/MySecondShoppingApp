@@ -16,6 +16,8 @@ import Cart from '../components/Main/Cart/Cart'
 import Search from '../components/Main/Search/Search'
 import Contact from '../components/Main/Contact/Contact'
 
+import Authentication from '../components/Authentication/Authentication'
+
 // import SafeAreaView from 'react-native-safe-area-view';
 
 const TestDrawerItem = (props) => (
@@ -27,24 +29,54 @@ const TestDrawerItem = (props) => (
   </View>
 );
 
-const ItemDrawer = createDrawerNavigator({
-  'Home': Main,
-  // 'Home': Home,
-  'Link đến TestDrawerItem function component': TestDrawerItem
-}, {
-  contentComponent: CustomDrawer
-}
-);
+// const ItemDrawer = createDrawerNavigator({
+//   'Home': Main,
+//   // 'Home': Home,
+//   'Authentication': Authentication,
+//   'Link đến TestDrawerItem function component': TestDrawerItem
+// }, {
+//   contentComponent: CustomDrawer
+// }
+// );
 
-const ListItemStack = createStackNavigator({
-  'List': List,
-  //   'StackHome': Home,
-  'Item': Item,
-  // 'Home': ItemDrawer
-});
+// const ListItemStack = createStackNavigator({
+//   'List': List,
+//   //   'StackHome': Home,
+//   'Item': Item,
+//   'Authentication': ItemDrawer,
+
+//   // 'Home': ItemDrawer
+// });
+
+// const IndexNavigator = createBottomTabNavigator({
+//   'Main': ItemDrawer,
+//   'Cart': Cart,
+//   'Search': Search,
+//   'Contact': Contact,
+// }, {
+//   defaultNavigationOptions: ({ navigation }) => ({
+//     tabBarIcon: ({ focused, horizontal, tintColor }) => {
+//       const { routeName } = navigation.state;
+//       let iconName;
+//       if (routeName === "Main") {
+//         iconName = `md-home`;
+//       } else if (routeName === "Cart") {
+//         iconName = `md-cart`;
+//       } else if (routeName === "Search") {
+//         iconName = `md-search`;
+//       } else if (routeName === "Contact") {
+//         iconName = `md-contact`;
+//       }
+//       return <Ionicons name={iconName} size={25} color={tintColor} />;
+//     }
+//   })
+// });
+
+
+
 
 const IndexNavigator = createBottomTabNavigator({
-  'Main': ItemDrawer,
+  'Main': Main,
   'Cart': Cart,
   'Search': Search,
   'Contact': Contact,
@@ -67,6 +99,25 @@ const IndexNavigator = createBottomTabNavigator({
   })
 });
 
-const AppInMain = createAppContainer(IndexNavigator);
+
+const ItemDrawer = createDrawerNavigator({
+  'Main': IndexNavigator,
+  'Authentication': Authentication,
+  'Link đến TestDrawerItem function component': TestDrawerItem
+}, {
+  contentComponent: CustomDrawer
+}
+);
+
+const ListItemStack = createStackNavigator({
+  'List': List,
+  'Item': Item,
+  'Authentication': ItemDrawer,
+});
+
+
+
+
+const AppInMain = createAppContainer(ItemDrawer);
 
 export default AppInMain; 

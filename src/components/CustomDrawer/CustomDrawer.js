@@ -5,45 +5,47 @@ import { DrawerItems } from 'react-navigation-drawer';
 
 
 
-function LoginJSX() {
-    return (
-        <View style={styles.loginContainer}>
-            <Text style={styles.username}>Nguyen Tran Nhat Thien</Text>
-            <View>
-                <TouchableOpacity style={styles.btnSignInStyle}
-                // onPress={() => this.props.navigation.navigate('OrderHistory')}
-                >
-                    <Text style={styles.btnTextSignIn}>Order History</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.btnSignInStyle}>
-                    <Text style={styles.btnTextSignIn}>Change Info</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.btnSignInStyle}>
-                    <Text style={styles.btnTextSignIn}>Sign out</Text>
-                </TouchableOpacity>
-            </View>
-            <View />
-        </View>
-    )
-}
+// function LoginJSX() {
+//     return (
+//         <View style={styles.loginContainer}>
+//             <Text style={styles.username}>Nguyen Tran Nhat Thien</Text>
+//             <View>
+//                 <TouchableOpacity style={styles.btnSignInStyle}
 
-function LogoutJSX() {
-    return (
-        <View style={{ flex: 1 }}>
-            <TouchableOpacity style={styles.btnStyle}>
-                <Text style={styles.btnText}>Sign In</Text>
-            </TouchableOpacity>
-        </View>
-    );
-}
+//                 >
+//                     <Text style={styles.btnTextSignIn}>Order History</Text>
+//                 </TouchableOpacity>
+//                 <TouchableOpacity style={styles.btnSignInStyle}>
+//                     <Text style={styles.btnTextSignIn}>Change Info</Text>
+//                 </TouchableOpacity>
+//                 <TouchableOpacity style={styles.btnSignInStyle}>
+//                     <Text style={styles.btnTextSignIn}>Sign out</Text>
+//                 </TouchableOpacity>
+//             </View>
+//             <View />
+//         </View>
+//     )
+// }
 
-function Greeting(props) {
-    const isLoggedIn = props.isLoggedIn;
-    if (isLoggedIn) {
-        return <LoginJSX />;
-    }
-    return <LogoutJSX />;
-}
+// function LogoutJSX() {
+//     return (
+//         <View style={{ flex: 1 }}>
+//             <TouchableOpacity style={styles.btnStyle}
+//             // onPress={() => this.props.navigation.navigate('Authentication')}
+//             >
+//                 <Text style={styles.btnText}>Sign In</Text>
+//             </TouchableOpacity>
+//         </View>
+//     );
+// }
+
+// function Greeting(props) {
+//     const isLoggedIn = props.isLoggedIn;
+//     if (isLoggedIn) {
+//         return <LoginJSX />;
+//     }
+//     return <LogoutJSX />;
+// }
 // const CustomDrawer = props => (
 //     <ScrollView style={{ backgroundColor: '#34B089' }}>
 //         <View style={styles.container}>
@@ -60,15 +62,57 @@ function Greeting(props) {
 export default class CustomDrawer extends Component {
     constructor(props) {
         super(props);
-        this.state = { isLogedIn: true };
+        this.state = { isLogedIn: false };
     }
     render(props) {
+
+        const LoginJSX = (
+            <View style={styles.loginContainer}>
+                <Text style={styles.username}>Nguyen Tran Nhat Thien</Text>
+                <View>
+                    <TouchableOpacity style={styles.btnSignInStyle}
+
+                    >
+                        <Text style={styles.btnTextSignIn}>Order History</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.btnSignInStyle}>
+                        <Text style={styles.btnTextSignIn}>Change Info</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.btnSignInStyle}>
+                        <Text style={styles.btnTextSignIn}>Sign out</Text>
+                    </TouchableOpacity>
+                </View>
+                <View />
+            </View>
+
+        );
+
+        const LogoutJSX = (
+            <View style={{ flex: 1 }}>
+                <TouchableOpacity style={styles.btnStyle}
+                // onPress={() => this.props.navigation.navigate('Authentication')}
+                >
+                    <Text style={styles.btnText}>Sign In</Text>
+                </TouchableOpacity>
+            </View>
+        );
+
+        const { isSignIn } = this.state;
+        const mainJSX = isSignIn ? LoginJSX : LogoutJSX;
+
         return (
             <ScrollView style={{ backgroundColor: '#34B089' }}>
                 <View style={styles.container}>
+                    <TouchableOpacity
+                        onPress={() => {
+                            this.props.navigation.navigate('Authentication');
+                        }}>
+                        <Text>Navigate to Item screen</Text>
+                    </TouchableOpacity>
                     <Image source={require('../../media/temp/profile.png')}
                         style={{ width: 100, height: 100 }} />
-                    <Greeting isLoggedIn={this.state.isLogedIn} />
+                    {/* <Greeting isLoggedIn={this.state.isLogedIn} /> */}
+                    {mainJSX}
                     {/* <DrawerItems {...props} /> */}
                 </View>
             </ScrollView>
