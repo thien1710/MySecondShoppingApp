@@ -3,7 +3,7 @@ import { AppRegistry, StatusBar } from 'react-native';
 import AppInMain from './src/components/AppInMain';
 
 //import for editing screen
-import Odh from './src/components/ChangeInfo/ChangeInfo'
+import Odh from './src/components/ProductDetail/ProductDetail'
 
 StatusBar.setHidden(true);
 export default class App extends Component {
